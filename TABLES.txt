@@ -1,0 +1,122 @@
+FT_DATA_TABLE:
+	Default Name:
+		AppleFox
+
+	Table Description:
+		This is the main data table. the loader loads the content of all of the pages text into this table.
+
+	Table Schema:
+		Row:		Column Family:			ColumnQualifier:	Visibility:		Time Stamp:		Value:
+		Word (Text)	URL,Title,Keywords (Text)	Word (Text)		Not Used 		Time Stamp	 	Occurrance, Frequency (String)
+
+
+
+FT_CHECKED_TABLE:
+	Default Name:
+		CheckedURLs
+
+	Table Description:
+		This table is simply a list of URLs that have already been loaded into FT_DATA_TABLE.
+
+	Table Schema:
+		Row:		Column Family:		ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		URL (Text) 	Not Used 		Not Used 		Not Used 	Not Used	Not Used
+
+
+IMG_HASH_TABLE:
+	Default Name:
+		imageTable
+
+	Table Description:
+		This table is used to store the hash of the images.
+
+	Table Schema:
+		Row:			Column Family:			ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		Hash Value (String)	Image Location(String) 		URL (String)	 	Not Used 	Not Used 	Hash Value (String)
+
+
+IMG_TAG_TABLE:
+	Default Name:
+		tagTable
+
+	Table Description:
+		Stores the relavent information for each image.
+
+	Table Schema:
+		Row:		Column Family:			ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		Tag (String) 	Image Location(String) 		URL (String)	 	Not Used 	Not Used 	Hash Value (String)
+		
+
+IMG_CHECKED_TABLE:
+	Default Name:
+		CheckedImages
+
+	Table Description:
+		Acts as a list of Images that have been checked.
+
+	Table Schema:
+		Row:			Column Family:		ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		Image Hash (Text) 	Not Used 		Not Used 		Not Used 	Not Used	Not Used
+		
+
+URL_TABLE:
+	Default Name:
+		URLs
+
+	Table Description:
+		Acts as a list of URLs that have been ingested. This is then used to load these pages.
+
+	Table Schema:
+		Row:		Column Family:	ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		URL (Text) 	Not used 	Not used 		Not used 	Not Used 	0 (int) before the URL is loaded, and Title (String) after
+		
+
+PR_TABLE (Prefix):
+	Default Name:
+		workTableNew
+		workTableOld
+
+	Table Description:
+		Instances:
+			New:
+				Stores the newest Page Rank Values
+
+			Old:
+				Stores the Second Newest Page Rank Values to calculate the newest Values.
+
+	Table Schema:
+		Row:		Column Family:	ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		URL (String) 	Not used 	Not used 		Not used 	Not Used 	Page Rank Value (Double)
+
+
+
+PR_URL_MAP_TABLE (Prefix):
+	Default Name:
+		pageRankTableTo
+		pageRankTableFrom
+
+	Table Description:
+		Instances:
+			To:
+				The URL in the Column Family points to the URL in the Row.
+
+			From:
+				The URL in the Column Family is from the URL in the Row.
+
+	Table Schema:
+		Row:		Column Family:		ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		URL (Text) 	URL (Text) 		Not used 		Not used 	Not Used  	Not Used
+
+
+
+PR_OUT_LINKS_COUNT_TABLE:
+	Default Name:
+		linkCounts
+
+	Table Description:
+		Tracks the number of times each URL occurs.
+
+	Table Schema:
+		Row:		Column Family:	ColumnQualifier:	Visibility:	Time Stamp:	Value:
+		URL (String) 	Not used 	Not used 		Not used 	Not Used  	Number of times the URL is pointed (int)
+		

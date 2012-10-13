@@ -1,0 +1,38 @@
+Starting and Using Ingest:
+
+1) Ensure the properties file is correct:
+   * Make sure all of the file names point to a real location
+   * Make sure none of the table names are the same.
+   * Make sure to set the property "SEED" equal to the name of the seed url
+
+2) Run the jar:
+   * Running it from the command line:
+     - java -jar -Xms<s1> -Xmx<s2> <name of jar> <properties> <command>
+     - <s1> = minimum amount of memory to use (MapReduce is expensive with
+			memory, so a good minimum as above 1G)
+     -<s2> = maximum amount of memory to use (e.g. 512M, 1G, 2G), this
+			should be greater than <s1>
+     -<name of jar> = location and name of the jar (folder1/folder2/ingest.jar)
+     -<properties> = location and name of the properties file
+			(folder1/folder2/properties.conf)
+     -<command> = the command to execute:
+	~ ingest: crawls all of the links, starting with the seed url, loads them
+			 				into the table, then repeats for NUM_ITERATIONS iterations
+	~ load: extracts data from the urls found from ingest and loads them 				
+			into the data table with the specified number of NGrams
+	~ imageload: does the same thing as load, except for with images.
+				This creates two tables, one specifying the hashes of the
+				images and the other specifying the tags of the images.
+	~ ftsample: creates a sample from the text data table created in load.
+				This sample is saved as a HashMap<String,Integer> to a file
+	~ imagesample: creates a sample from the image table created in
+				imageload
+	~ pr: calculates the page rank of all pages, using the url maps
+				created in ingest.  This is saved as a HashMap.
+  
+  * Proper order of execution:
+    1) ingest **
+    2) load and imgload
+    3) ftsample and imgsample
+    4) pr
+	**if both is run, load doesn't need to be run in step 2

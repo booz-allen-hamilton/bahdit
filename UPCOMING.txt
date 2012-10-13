@@ -1,0 +1,5 @@
+Version 0.4.0 : "Ice Cream Invite"
+- Drag-and-drop image search
+- Filter HTML parsing by <div>s
+- Logo
+

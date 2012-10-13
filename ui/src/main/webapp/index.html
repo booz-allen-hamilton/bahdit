@@ -1,0 +1,203 @@
+<!-- 
+/**
+ * Copyright 2012 Booz Allen Hamilton. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  Booz Allen Hamilton licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+<!DOCTYPE html>
+<html id="home">
+<head>
+<title>Bahdit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="images/search-icon.png" rel="icon" type="image/x-icon"/>
+<link rel='stylesheet' type='text/css' href='css/style.css'/>
+<link rel="stylesheet" type="text/css" href="css/dnd.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+	var webSelected = true, 
+		imgSelected = false,
+		pigSelected = false,
+		defaultTabColor = $("#advanced").css("background");
+		activeTabColor  = "rgba(0,0,0,0.6)"
+	
+	document.getElementById("query").focus();
+	$("#web").css("background", activeTabColor);
+	$("#web").css("color", "white");
+	$("#imageSearch").hide();
+	
+	$("#image").click(function () {
+		if (webSelected) {
+			webSelected = false;
+			$("#web").css("background", defaultTabColor);
+			$("#web").css("color", "#848484");
+			$("#searchForm").fadeOut(200);
+		} else if (pigSelected) {
+			pigSelected = false;
+			$("#advanced").css("background", defaultTabColor);
+			$("#advanced").css("color", "#848484");
+			$("#searchForm").fadeOut(200);
+		}
+		
+		imgSelected = true;
+		$("#image").css("background", activeTabColor);
+		$("#image").css("color", "white");
+		
+		$(".formDiv").animate({
+			height: "300px"
+		}, 200, function () {
+			$("#imageSearch").fadeIn(200);
+			document.getElementById("imgQuery").focus();
+		});
+	});
+
+	$("#web").click(function () {
+		if (imgSelected) {
+			imgSelected = false;
+			$("#image").css("background", defaultTabColor);
+			$("#image").css("color", "#848484");
+			$("#imageSearch").fadeOut(200);
+		} else if (pigSelected) {
+			pigSelected = false;
+			$("#advanced").css("background", defaultTabColor);
+			$("#advanced").css("color", "#848484");
+		}
+		
+		webSelected = true;
+		$("#web").css("background", activeTabColor);
+		$("#web").css("color", "white");
+		
+		$(".formDiv").animate({
+			height: "150px"
+		}, 200, function () {
+			$("#searchForm").fadeIn(200);
+			document.getElementById("query").focus();
+		});
+	});
+
+	$("#advanced").click(function () {
+		window.location = "/Bahdit/PigQuery";
+	})
+});
+</script>
+</head>
+	
+<body>
+	<div id='main'>
+		<div id="header">
+			Bahdit&nbsp;
+			<img src="images/bahdit2.png" height="100" alt="bahdit.png" style="opacity: 0.7;"/>
+		</div>
+		
+		<div id="tabDiv">
+			<span id="web" class="searchtab">Web</span>
+			<span id="image" class="searchtab">Image</span>
+			<span id="advanced" class="searchtab">Advanced</span>
+		</div>
+		
+		<!--  								 -->
+		<!-- Container for the search fields -->
+		<!-- 								 -->
+		<div class="formDiv">
+
+			<!-- Web search form -->
+			<form id="searchForm" action='ProcessQuery' method='get'>
+				<input type='text' id="query" class="text" name='query' autofocus='autofocus' required/>
+				<input type="hidden" name="searchType" value="web"/>
+				<input type='hidden' name='page' value='1'/>
+				<input type="button" class="submit" value="Search" onclick="submitForm();"/>
+			</form>
+			
+			<!-- Main image search form -->
+			<div id="imageSearch">
+
+				<!-- Normal image search -->
+				<div id="normalSearch">
+					<form class="imgSearchForm" id="imgSearchForm" action="ProcessQuery" method="get">
+						<input type='text' id="imgQuery" class="text" name='imgQuery' autofocus='autofocus' required/>
+						<input type="hidden" name="searchType" value="image"/>
+						<input type="hidden" name="similar" value="0"/>
+						<input type="button" class="submit" value="Search" onclick="submitImgQuery();"/>
+					</form>
+				</div>
+
+				<!-- Reverse (drag and drop area) image search -->
+				<div id="reverseSearch">
+					<h2>Reverse Image Search</h2>
+			    	<div id="dropZone">
+						<p>Drag and drop an image here</p>
+				      	<div id="thumbnails">
+				      		<script type="text/html" id="thumbnail_template">
+							    <div class="thumbnail">
+							        <img src="<%= file.src %>" alt="<%= file.name %>" title="<%= file.name %>"/>
+							    </div>
+						  	</script>
+				      	</div>
+			    	</div>
+			    	<form id="reverseImgSearch" enctype="multipart/form-data" action="ProcessQuery" method="post">
+		    			<input type='file' id="uploadForm" name="imageFile" onchange="this.form.submit()" placeholder="Click to upload"/>
+		    			<input type="hidden" name="searchType" value="reverseImgSearch"/>
+			      	</form>
+			    </div>
+	    	</div>
+
+			<!-- Pig/Advanced (Pig query and pig scripts) search -->
+
+		</div>
+	</div>
+<script>
+function submitForm () {
+	if (document.getElementById("query").value != "") {
+		document.forms["searchForm"].submit();
+	}
+}
+
+function submitImgQuery () {
+	if (document.getElementById("imgQuery").value != "") {
+		document.forms["imgSearchForm"].submit();
+	}
+}
+
+buttonAdded = false;
+
+function addUploadButton () {
+	if (!buttonAdded) {
+		buttonAdded = true;
+		var form  = "<input id='uploadImg' type='button' onclick='uploadImage()' value='Upload and Search'/>";
+		document.getElementById("dropZone").innerHTML = document.getElementById("dropZone").innerHTML.replace("Drag and drop an image here", "");
+		document.getElementById("dropZone").innerHTML = document.getElementById("dropZone").innerHTML.concat(form);
+	}
+}
+
+function uploadImage() {
+    var formData = new FormData();
+    formData.append("imageFile", image);
+    formData.append("searchType", "reverseImgSearch");
+	
+    $.ajax({
+		url: 'ProcessQuery',
+		data: formData,
+		processData: false,
+		contentType: false,
+		type: 'POST',
+		success: function(data){
+			document.documentElement.innerHTML = data;
+		}
+	});
+}
+</script>
+<script src="scripts/dnd.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+HOW TO INGEST
+
+INGEST TEXT :
+
+java -jar ingest.jar properties.conf ingest
+(This will crawl the web for links)
+
+java -jar ingest.jar properties.conf load
+(Gets the text and stores into a table)
+(Can be stopped and started at any time)
+
+java -jar ingest.jar properties.conf ftsample
+(Creates the sample table)
+
+INGEST IMAGE : 
+
+java -jar ingest.jar properties.conf imageload
+(Loads the image info into a table)
+(Can be stopped and started at any time)
+
+java -jar ingest.jar properties.conf imagesample
+(Creates an image sample table)

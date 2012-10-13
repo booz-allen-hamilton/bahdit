@@ -1,0 +1,66 @@
+Version 1.0 - "Bahdit"
+
+Updates from Version 0.3.0 - "Java Break"
+- added logo
+- added tests / documentation
+- added setup docs
+- added powerpoint
+- cleaned up visuals
+- changed title font
+
+Updates from Version 0.2.1 - "Tea Time"
+- added Pagerank to ingest
+- refactored code to use Google Guice
+- added Pig queries
+- incorporated Pagerank into search results
+- added visualization menu
+- updated tag cloud to use keywords
+- changed name
+- added image search
+- normalized keyword cloud font size
+- added HTML div filter to remove unwanted elements
+- added search menu for image and pig queries
+- added image upload search
+
+Updates from Version 0.2.0 - "Tea Time"
+- sped up search
+- upgraded timer
+- added keywords
+- added tablets to ingest
+- made ingest pluggable
+- fixed paging
+- migrated to Apache Lucene spell check
+- fixed titles with commas
+
+Version 0.2.0 Features:
+- MapReduced web crawler with command line interface
+- Stores single word terms in Accumulo table
+- Lookup based on lowest frequency in sampling table
+- Terms ranked by TF-IDF
+- Documents ranked by cosine similarity
+- Configuration files used to configure search and ingest
+- Spell check gives single suggestion if no results are found
+- Stop words list eliminates common words from search and ingest
+- Sampling table used for search and tag cloud
+- Tag cloud of recent searches and common terms
+- Different pages of search
+- Cache stores recent search results and speeds up search
+
+Updates from Version 0.1.0 - "Cookie Social":
+- added MapReduce crawler
+- added spell check (Levenshtein Distance)
+- added stop words list (both ingest and search)
+- optimized search data structures
+- added sampling table
+- replaced ratio rankings with TF-IDF rankings
+- added tag cloud
+- added paging
+- added cache
+
+Version 0.1.0 Features:
+- Sequential web crawler with command line interface
+- Stores single word terms in Accumulo table
+- Lookup based on first word of search term
+- Terms ranked by ratio of frequency to document size
+- Documents ranked by cosine similarity
+- Hard-coded constants instead of configuration files

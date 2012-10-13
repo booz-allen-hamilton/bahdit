@@ -1,0 +1,64 @@
+.thumbnail {
+  height: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.thumbnail img {
+  border: 1px solid #ccc;
+  height: 80px;
+}
+
+#dropZone {
+  color: #ccc;
+  width: 300px;
+  height: 200px;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 150px;
+  border: 2px dashed #ccc;
+  box-shadow: inset 0 0 10px rgba(0,0,0, 0.4);
+}
+
+#uploadImg {
+  border: 0;
+  width: 200px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0, 0.4);
+  background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+} #uploadImg:hover {
+  cursor: pointer;
+}
+
+#uploadForm {
+  border: 0;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset 0 2px 8px rgba(0,0,0, 0.4);
+  background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+}
+
+#dnd {
+  width: 100%;
+  text-align: center;
+}

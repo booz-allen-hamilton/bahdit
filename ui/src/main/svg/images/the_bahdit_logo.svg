@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!--
+ *
+ * Copyright 2012 Booz Allen Hamilton. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  Booz Allen Hamilton licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+-->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3893"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   width="1691"
+   height="507"
+   sodipodi:docname="the_bahdit_logo.svg">
+  <metadata
+     id="metadata3899">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3897" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     id="namedview3895"
+     showgrid="false"
+     inkscape:zoom="0.85393258"
+     inkscape:cx="697.29762"
+     inkscape:cy="253.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3893" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 1146.4605,136.94737 c -7.0263,12.88158 -3.5131,19.90789 1.1711,43.32895 4.6842,23.42105 3.5131,30.44736 7.0263,50.35526 3.5132,19.90789 16.3947,50.35526 35.1316,51.52631 18.7368,1.17106 25.7631,-17.56578 50.3552,-35.13157 24.5921,-17.56579 52.6974,-26.93422 62.0658,-31.61843 9.3684,-4.68421 10.5395,-10.53947 5.8553,-17.56579 -4.6842,-7.02631 -22.25,-16.39473 -45.6711,-28.10526 -23.421,-11.71052 -70.2631,-37.47368 -86.6579,-37.47368 -16.3947,0 -23.421,-3.51316 -29.2763,4.68421 z"
+     id="path4626"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 1565.6974,77.223684 c -33.9606,36.302636 -62.0658,71.434206 -77.2895,92.513156 -15.2237,21.07895 -26.9342,31.61842 -23.4211,38.64474 3.5132,7.02631 18.7369,8.19737 48.0132,15.22368 29.2763,7.02632 79.6316,28.10527 93.6842,37.47369 14.0526,9.36842 30.4474,21.07894 38.6447,21.07894 8.1974,0 4.6843,-4.68421 5.8553,-9.36842 1.1711,-4.68421 -5.8553,-19.90789 -5.8553,-33.96052 0,-14.05263 7.0264,-81.97369 12.8816,-104.22369 5.8553,-22.25 19.9079,-88.999997 25.7632,-96.026313 5.8552,-7.026316 4.6842,-15.223684 -3.5132,-18.736842 -8.1973,-3.513158 -30.4473,-4.684211 -49.1842,8.197368 -18.7368,12.881579 -57.3816,39.81579 -65.5789,49.184211 z"
+     id="path4628"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="M 1316.25 333.6875 C 1306.8815 333.6875 1306.8996 339.55098 1297.5312 345.40625 C 1275.2812 357.11677 1231.9325 364.13158 1224.9062 373.5 C 1217.8799 382.86842 1207.3553 389.89803 1223.75 400.4375 C 1240.1447 410.97697 1274.1185 434.39474 1287 440.25 C 1299.8816 446.10526 1315.1003 457.8125 1324.4688 457.8125 C 1333.8372 457.8125 1346.7204 439.08059 1349.0625 420.34375 C 1351.4046 401.6069 1351.3848 367.64803 1343.1875 355.9375 C 1334.9901 344.22697 1325.6184 333.6875 1316.25 333.6875 z M 1312.75 427.375 L 1322.125 427.375 C 1326.8092 427.375 1317.421 437.92269 1316.25 439.09375 C 1315.0789 440.2648 1309.2467 432.04605 1304.5625 430.875 C 1299.8783 429.70395 1306.8947 427.375 1312.75 427.375 z "
+     id="path4630" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="M 1485.875 335.4375 C 1467.5407 335.4375 1448.8981 338.07566 1442.75 351.25 C 1434.5527 368.81579 1429.8586 372.34046 1428.6875 389.90625 C 1431.0296 421.52467 1435.7105 439.08388 1446.25 447.28125 C 1456.7895 455.47861 1486.0773 450.80263 1529.4062 436.75 C 1572.7352 422.69737 1616.0526 412.13816 1624.25 408.625 C 1632.4474 405.11184 1645.3289 391.07401 1646.5 385.21875 C 1647.6711 379.36348 1632.4556 364.13651 1613.7188 358.28125 C 1594.982 352.42598 1525.875 337.2023 1503.625 336.03125 C 1498.0625 335.73848 1491.9864 335.4375 1485.875 335.4375 z M 1465.125 428.40625 C 1467.5952 428.47487 1471.4161 429.13487 1474.3438 432.0625 C 1479.0279 436.74671 1472.0132 436.73684 1468.5 440.25 C 1464.9868 443.76316 1461.4803 440.26151 1455.625 434.40625 C 1449.7698 428.55098 1456.8011 428.53125 1462.6562 428.53125 C 1462.6562 428.53125 1463.6429 428.36508 1465.125 428.40625 z "
+     id="path4632" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 1375.9868,463.67105 c -8.1973,5.85527 -16.3947,8.19737 -16.3947,14.05263 0,5.85527 8.1974,11.71053 17.5658,11.71053 9.3684,0 24.5921,-3.51316 22.25,-10.53947 -2.3421,-7.02632 -17.5658,-15.22369 -23.4211,-15.22369 z"
+     id="path4638"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:365.21282959px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+     x="-1.8792878"
+     y="400.91165"
+     id="text2990"
+     sodipodi:linespacing="125%"
+     transform="scale(0.99199935,1.0080652)"><tspan
+       sodipodi:role="line"
+       id="tspan2992"
+       x="-1.8792878"
+       y="400.91165">Bahdit</tspan></text>
+</svg>

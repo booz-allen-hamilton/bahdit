@@ -1,0 +1,103 @@
+/*---------------------- Begin Search Results Page ---------------------------*/
+#headerWithSearchBar {
+	z-index: 10;
+	width: 100%;
+	height: 110px;
+	position: fixed;
+	white-space: nowrap;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	box-shadow: 0 4px 20px #A4A4A4;
+	background: -moz-linear-gradient(top, rgba(238, 238, 238, 1) 0%,
+		rgba(204, 204, 204, 1) 100% );
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(238,
+		238, 238, 1) ), color-stop(100%, rgba(204, 204, 204, 1) ) );
+	background: -webkit-linear-gradient(top, rgba(238, 238, 238, 1) 0%,
+		rgba(204, 204, 204, 1) 100% );
+	background: -o-linear-gradient(top, rgba(238, 238, 238, 1) 0%,
+		rgba(204, 204, 204, 1) 100% );
+	background: -ms-linear-gradient(top, rgba(238, 238, 238, 1) 0%,
+		rgba(204, 204, 204, 1) 100% );
+	background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%,
+		rgba(204, 204, 204, 1) 100% );
+}
+
+.submit {
+	padding: 2px;
+	color: #848484;
+	margin-left: 4px;
+	border: 1px solid #848484;
+} .submit:hover {
+	box-shadow: 0 0 4px rgba(0,0,0, 0.4);
+} .submit:active {
+	box-shadow: inset 0 0 4px rgba(0,0,0, 0.4);
+}
+
+.resultsPageForm input.text {
+	width: 71.5%;
+	float: left;
+	height: 30px;
+	font-size: 1em;
+	display: inline;
+}
+
+#results {
+	width: 48%;
+	height: 86%;
+	z-index: 10;
+	float: left;
+	position: fixed;
+	display: inline;
+	margin-top: 112px;
+	box-shadow: 6px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+#resultsFrame {
+	width: 96%;
+	height: 92%;
+	padding: 10px;
+	overflow: auto;
+}
+
+#imageResults {
+	width: 100%;
+	height: 86%;
+	z-index: 10;
+	float: left;
+	position: fixed;
+	display: inline;
+	margin-top: 112px;
+	box-shadow: 6px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+#url {
+	color: #088A29;
+	font-size: .8em;
+}
+
+.rank {
+	font-size: 0.8em;
+}
+
+.keyword {
+	font-size: 0.8em;
+} .keyword a {
+	margin: 2px;
+	padding: 2px;
+	color: #000000;
+	font-size: 0.8em;
+	border-radius: 2px;
+	text-decoration: none;
+	background: rgba(0,0,0, 0.1);
+	border: 0.1em solid rgba(0,0,0, 0.3);
+	box-shadow: 0 0 1px rgba(0,0,0, 0.6);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0, 0.6);
+} .keyword a:hover {
+	background: rgba(0,0,0, 0.4);
+	border: 0.1em solid rgba(0,0,0, 0.1);
+} .keyword a:active {
+	box-shadow: inset 0 0 2px rgba(0,0,0, 0.6);
+	-moz-box-shadow: inset 0 0 1px rgba(0,0,0, 0.6);
+}
+/*----------------------- End Search Results Page ----------------------------*/
+

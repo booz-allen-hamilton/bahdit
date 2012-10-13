@@ -1,0 +1,26 @@
+Version 1.0 - "Bahdit"
+
+Version 1.0 Features:
+- Ingest
+  - Input text and image in separate tables
+  - MapReduced web crawler with command line interface
+  - Configuration files used to configure ingest
+  - Stores single word terms in Accumulo table
+  - Creates Pagerank for every URL
+  - List of elements to ignore for both text and image ingesting
+- Search
+  - Search both text and images from separate tables
+  - Lookup based on lowest frequency in sampling table
+  - Terms ranked by TF-IDF
+  - Documents ranked by cosine similarity and Pagerank
+  - Configuration files used to configure search
+  - Spell check gives single suggestion if no results are found
+  - Stop words list eliminates common words from search and ingest
+  - Cache stores recent search results and speeds up search
+- User Interface
+  - User can switch between text/image/Pig queries
+  - Different pages of search
+  - Tag cloud visualization of popular keywords
+  - Tree visualization of popular keywords
+  - Pagerank graph
+  - Drag-and-drop reverse image search

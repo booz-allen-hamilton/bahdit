@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!--
+ *
+ * Copyright 2012 Booz Allen Hamilton. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  Booz Allen Hamilton licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+-->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3873"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   width="600"
+   height="180"
+   sodipodi:docname="scaled_bahdit_logo.svg">
+  <metadata
+     id="metadata3879">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3877" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1213"
+     inkscape:window-height="800"
+     id="namedview3875"
+     showgrid="false"
+     inkscape:zoom="0.60166667"
+     inkscape:cx="272.06931"
+     inkscape:cy="-4.7368421"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g5238" />
+  <g
+     id="g5238"
+     transform="matrix(0.34601028,0,0,0.3427439,120.4216,56.729985)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path4626"
+       d="m 815.2926,-16.295173 c -7.0263,12.88158 -3.5131,19.9078896 1.1711,43.32895 4.6842,23.42105 3.5131,30.44736 7.0263,50.35526 3.5132,19.90789 16.3947,50.355263 35.1316,51.526313 18.7368,1.17106 25.7631,-17.56578 50.3552,-35.131573 24.5921,-17.56579 52.6974,-26.93422 62.0658,-31.61843 9.3684,-4.68421 10.5395,-10.53947 5.8553,-17.56579 -4.6842,-7.02631 -22.25,-16.39473 -45.6711,-28.10526 -23.421,-11.7105204 -70.2631,-37.47368 -86.6579,-37.47368 -16.3947,0 -23.421,-3.51316 -29.2763,4.68421 z"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4628"
+       d="m 1234.5295,-76.018858 c -33.9606,36.302636 -62.0658,71.434205 -77.2895,92.513155 -15.2237,21.07895 -26.9342,31.61842 -23.4211,38.64474 3.5132,7.02631 18.7369,8.19737 48.0132,15.22368 29.2763,7.02632 79.6316,28.10527 93.6842,37.473693 14.0526,9.36842 30.4474,21.07894 38.6447,21.07894 8.1974,0 4.6843,-4.68421 5.8553,-9.36842 1.1711,-4.68421 -5.8553,-19.907893 -5.8553,-33.960523 0,-14.05263 7.0264,-81.9736904 12.8816,-104.22369 5.8553,-22.249999 19.9079,-88.999997 25.7632,-96.026307 5.8552,-7.02632 4.6842,-15.22369 -3.5132,-18.73685 -8.1973,-3.51315 -30.4473,-4.68421 -49.1842,8.19737 -18.7368,12.88158 -57.3816,39.815791 -65.5789,49.184212 z"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4630"
+       d="m 985.0821,180.44496 c -9.3685,0 -9.3504,5.86348 -18.7188,11.71875 -22.25,11.71052 -65.5987,18.72533 -72.625,28.09375 -7.0263,9.36842 -17.5509,16.39803 -1.1562,26.9375 16.3947,10.53947 50.3685,33.95724 63.25,39.8125 12.8816,5.85526 28.1003,17.5625 37.4688,17.5625 9.3684,0 22.2516,-18.73191 24.5937,-37.46875 2.3421,-18.73685 2.3223,-52.69572 -5.875,-64.40625 -8.1974,-11.71053 -17.5691,-22.25 -26.9375,-22.25 z m -3.5,93.6875 9.375,0 c 4.6842,0 -4.704,10.54769 -5.875,11.71875 -1.1711,1.17105 -7.0033,-7.0477 -11.6875,-8.21875 -4.6842,-1.17105 2.3322,-3.5 8.1875,-3.5 z"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path4632"
+       d="m 1154.7071,182.19496 c -18.3343,0 -36.9769,2.63816 -43.125,15.8125 -8.1973,17.56579 -12.8914,21.09046 -14.0625,38.65625 2.3421,31.61842 7.023,49.17763 17.5625,57.375 10.5395,8.19736 39.8273,3.52138 83.1562,-10.53125 43.329,-14.05263 86.6464,-24.61184 94.8438,-28.125 8.1974,-3.51316 21.0789,-17.55099 22.25,-23.40625 1.1711,-5.85527 -14.0444,-21.08224 -32.7812,-26.9375 -18.7368,-5.85527 -87.8438,-21.07895 -110.0938,-22.25 -5.5625,-0.29277 -11.6386,-0.59375 -17.75,-0.59375 z m -20.75,92.96875 c 2.4702,0.0686 6.2911,0.72862 9.2188,3.65625 4.6841,4.68421 -2.3306,4.67434 -5.8438,8.1875 -3.5132,3.51316 -7.0197,0.0115 -12.875,-5.84375 -5.8552,-5.85527 1.1761,-5.875 7.0312,-5.875 0,0 0.9867,-0.16617 2.4688,-0.125 z"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4638"
+       d="m 1044.8189,310.42851 c -8.1973,5.85527 -16.3947,8.19737 -16.3947,14.05263 0,5.85527 8.1974,11.71053 17.5658,11.71053 9.3684,0 24.5921,-3.51316 22.25,-10.53947 -2.3421,-7.02632 -17.5658,-15.22369 -23.4211,-15.22369 z"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:336.92709351px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-335.01971"
+       y="258.1846"
+       id="text2991"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0130035,0.98716345)"><tspan
+         sodipodi:role="line"
+         id="tspan2993"
+         x="-335.01971"
+         y="258.1846"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">Bahdit</tspan></text>
+  </g>
+</svg>

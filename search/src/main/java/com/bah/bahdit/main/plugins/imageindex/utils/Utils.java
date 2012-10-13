@@ -1,0 +1,56 @@
+/**
+ * Copyright 2012 Booz Allen Hamilton. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  Booz Allen Hamilton licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.bah.bahdit.main.plugins.imageindex.utils;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class Utils {
+
+	/**
+	 * Turns a byte array into its original object form
+	 * 
+	 * @param b - byte array to be read as object
+	 * @return object from the byte array representation
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
+	public static Object deserialize(byte[] b) throws IOException, 
+	ClassNotFoundException {
+		ByteArrayInputStream ba = new ByteArrayInputStream(b);
+		ObjectInputStream oba = new ObjectInputStream(ba);
+		return oba.readObject();
+	}
+
+	/**
+	 * Turns an object into a byte array
+	 * Object must be serializable
+	 * 
+	 * @param o - object to be serialized
+	 * @return byte array representation of the object
+	 * @throws IOException
+	 */
+	public static byte[] serialize(Object o) throws IOException {
+		ByteArrayOutputStream ba = new ByteArrayOutputStream(1000);
+		ObjectOutputStream oba = new ObjectOutputStream(ba);
+		oba.writeObject(o);
+		return ba.toByteArray();
+	}
+}

@@ -1,0 +1,80 @@
+/*---------------------- Begin Visualization Container -----------------------*/
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
+#tagCloud {
+	width: 52%;
+	float: right;
+	height: 696px;
+	display: inline;
+	overflow: hidden;
+	margin-top: 110px;
+	text-align: center;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('../images/scaled_bahdit_logo.png');
+	opacity: 0.2;
+}
+
+#pigResults {
+	width: 52%;
+	float: right;
+	height: 696px;
+	display: inline;
+	overflow: hidden;
+	margin-top: 110px;
+	text-align: center;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.tab {
+	left: 48%;
+	width: 150px;
+	height: 30px;
+	position: fixed;
+	font-size: 12px;
+	margin-right: 4px;
+	line-height: 28px;
+	text-align: center;
+	background-repeat: no-repeat;
+	border-top-right-radius: 6px;
+	color: rgba(255,255,255, 0.6);
+	border-bottom-right-radius: 6px;
+	background-position: right center;
+	background-color: rgba(0,0,0, 0.4);
+	border-top: solid rgba(0,0,0, 0.4);
+	border-right: solid rgba(0,0,0, 0.4);
+	border-bottom: solid rgba(0,0,0, 0.4);
+	background-image: url('../images/arrow.png');
+} .tab:hover {
+	cursor: pointer;
+}
+
+#canvasDiv {
+	width: 0;
+	height: 100%;
+	background: rgba(0,0,0, 0.6);
+}
+
+#keywordsTree {
+	width: 100%;
+	height: 100%;
+}
+#radioButtons {
+	height: 25px;
+	color: #ffffff;
+	font-size: 0.8em;
+	background-color: #000000;
+} span.radioButton {
+	display: inline;
+	line-height: 25px;
+}
+
+.tip {
+	padding: 10px;
+	color: #ffffff;
+	font-size: 0.8em;
+	background: rgba(0,0,0, 0.6);
+}
+/*----------------------- End Visualization Container ------------------------*/
