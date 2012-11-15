@@ -54,7 +54,7 @@ public class Search {
 
 	private static Log log = LogFactory.getLog(Search.class);
 	
-	public static final String CONFIGURATION_FILE = "properties.conf";
+	public static final String CONFIGURATION_FILE = "/properties.conf";
 
 	public static final String QUERY = "QUERY";
 	public static final String MAX_NGRAMS = "MAX_NGRAMS";
