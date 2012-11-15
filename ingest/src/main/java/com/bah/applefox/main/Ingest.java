@@ -58,7 +58,6 @@ public class Ingest {
 			IMG_HASH_TABLE, IMG_CHECKED_TABLE, IMG_TAG_TABLE,
 			IMG_HASH_SAMPLE_TABLE, IMG_TAG_SAMPLE_TABLE, FT_DIVS_FILE,
 			FT_SPLIT_SIZE, IMG_SPLIT_SIZE, URL_SPLIT_SIZE, PR_SPLIT_SIZE;
-	private static Set<String> ALLOWED_DOMAINS = Collections.emptySet();
 
 	// Integers to take in from the configuration file
 	private static int MAX_NGRAMS, NUM_ITERATIONS, NUM_NODES, PR_ITERATIONS;
@@ -147,12 +146,6 @@ public class Ingest {
 		SEED = properties.getProperty("SEED");
 		USER_AGENT = properties.getProperty("USER_AGENT");
 		URL_SPLIT_SIZE = properties.getProperty("URL_SPLIT_SIZE");
-		String allowedDomainString = properties.getProperty("ALLOWED_DOMAINS")
-				.replaceAll("\\s+", "");
-		if (allowedDomainString != null && allowedDomainString.length() > 0) {
-			ALLOWED_DOMAINS = new HashSet<String>(
-					Arrays.asList(allowedDomainString.split(",")));
-		}
 
 		// Page Rank Variables
 		PR_TABLE_PREFIX = properties.getProperty("PR_TABLE_PREFIX");
