@@ -44,11 +44,23 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.2</version>
         <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.afspq.web.EmbeddedServer</mainClass>
+            </manifest>
+          </archive>
           <webResources>
             <resource>
-              <directory>target/generated-web-resources/images/images</directory>
+              <directory>target/generated-web-resources/images</directory>
             </resource>
           </webResources>
+          <overlays>
+            <overlay>
+              <groupId>com.bah.bahdit</groupId>
+              <artifactId>embedded-ui</artifactId>
+              <type>jar</type>
+            </overlay>
+          </overlays>
         </configuration>
       </plugin>
     </plugins>
@@ -154,6 +166,10 @@
     <dependency>
       <groupId>com.bah.bahdit</groupId>
       <artifactId>search</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.bah.bahdit</groupId>
+      <artifactId>embedded-ui</artifactId>
     </dependency>
   </dependencies>
 </project>

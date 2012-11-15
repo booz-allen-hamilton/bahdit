@@ -10,6 +10,7 @@
     <module>ui</module>
     <module>ingest</module>
     <module>search</module>
+    <module>embedded-ui</module>
   </modules>
   <build>
     <pluginManagement>
@@ -45,6 +46,11 @@
         <version>${project.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty</artifactId>
+        <version>6.1.26</version>
+      </dependency>
+      <dependency>
         <groupId>com.bah.bahdit</groupId>
         <artifactId>storage</artifactId>
         <version>${project.version}</version>
@@ -52,6 +58,11 @@
       <dependency>
         <groupId>com.bah.bahdit</groupId>
         <artifactId>ui</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.bah.bahdit</groupId>
+        <artifactId>embedded-ui</artifactId>
         <version>${project.version}</version>
       </dependency>
       <!-- Other stuff -->

@@ -17,7 +17,11 @@
 package com.bah.applefox.main;
 
 import java.io.FileInputStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.accumulo.core.client.BatchWriter;
 import org.apache.accumulo.core.data.Mutation;
@@ -54,6 +58,7 @@ public class Ingest {
 			IMG_HASH_TABLE, IMG_CHECKED_TABLE, IMG_TAG_TABLE,
 			IMG_HASH_SAMPLE_TABLE, IMG_TAG_SAMPLE_TABLE, FT_DIVS_FILE,
 			FT_SPLIT_SIZE, IMG_SPLIT_SIZE, URL_SPLIT_SIZE, PR_SPLIT_SIZE;
+	private static Set<String> ALLOWED_DOMAINS = Collections.emptySet();
 
 	// Integers to take in from the configuration file
 	private static int MAX_NGRAMS, NUM_ITERATIONS, NUM_NODES, PR_ITERATIONS;
@@ -66,7 +71,7 @@ public class Ingest {
 
 	public static void main(String[] args) throws Exception {
 
-		if(args.length == 1 && args[0].equals("--help")){
+		if (args.length == 1 && args[0].equals("--help")) {
 			System.out.println("Not enough arguments");
 			System.out
 					.println("Arguments should be in the format <properties file> <command>");
@@ -142,6 +147,12 @@ public class Ingest {
 		SEED = properties.getProperty("SEED");
 		USER_AGENT = properties.getProperty("USER_AGENT");
 		URL_SPLIT_SIZE = properties.getProperty("URL_SPLIT_SIZE");
+		String allowedDomainString = properties.getProperty("ALLOWED_DOMAINS")
+				.replaceAll("\\s+", "");
+		if (allowedDomainString != null && allowedDomainString.length() > 0) {
+			ALLOWED_DOMAINS = new HashSet<String>(
+					Arrays.asList(allowedDomainString.split(",")));
+		}
 
 		// Page Rank Variables
 		PR_TABLE_PREFIX = properties.getProperty("PR_TABLE_PREFIX");
@@ -261,8 +272,7 @@ public class Ingest {
 			w.close();
 			ToolRunner.run(CachedConfiguration.getInstance(),
 					injector.getInstance(Loader.class), temp);
-		}
-		else if (RUN.equals("ftsample")) {
+		} else if (RUN.equals("ftsample")) {
 			// Create a sample table for full text index
 			FTAccumuloSampler ftSampler = new FTAccumuloSampler(FT_SAMPLE,
 					FT_DATA_TABLE, FT_CHECKED_TABLE);

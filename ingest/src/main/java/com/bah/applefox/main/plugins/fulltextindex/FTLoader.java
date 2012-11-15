@@ -29,6 +29,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -69,7 +70,8 @@ import com.bah.applefox.main.Loader;
 import com.bah.applefox.main.plugins.utilities.AccumuloUtils;
 import com.bah.applefox.main.plugins.utilities.DivsFilter;
 import com.bah.applefox.main.plugins.utilities.IngestUtils;
-import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageParser;
+import com.bah.applefox.main.plugins.webcrawler.utilities.PageCrawlException;
+import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageCrawl;
 
 /**
  * A MapReduce job that loads the NGrams from the pages indicated by the URLs in
@@ -346,8 +348,13 @@ public class FTLoader extends Loader {
 			String keywords = metadata.get("keywords");
 			String title = metadata.get("title");
 			if (title == null) {
-				WebPageParser p = new WebPageParser(url, "");
-				p.parse();
+				WebPageCrawl p;
+				try {
+					p = new WebPageCrawl(url, "", Collections.<String>emptySet());
+				} catch (PageCrawlException e) {
+					log.info(e);
+					return false;
+				}
 				title = p.getTitle();
 			}
 

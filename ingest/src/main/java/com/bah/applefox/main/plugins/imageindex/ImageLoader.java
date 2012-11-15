@@ -18,6 +18,8 @@ package com.bah.applefox.main.plugins.imageindex;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Collections;
+import java.util.Set;
 
 import org.apache.accumulo.core.client.AccumuloException;
 import org.apache.accumulo.core.client.AccumuloSecurityException;
@@ -43,7 +45,8 @@ import org.apache.hadoop.util.Tool;
 
 import com.bah.applefox.main.plugins.imageindex.utilites.ImageHasher;
 import com.bah.applefox.main.plugins.utilities.AccumuloUtils;
-import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageParser;
+import com.bah.applefox.main.plugins.webcrawler.utilities.PageCrawlException;
+import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageCrawl;
 
 /**
  * This class is used to load image hashes and tags into their respective
@@ -120,7 +123,7 @@ public class ImageLoader extends Configured implements Tool {
 	public static class ReducerClass extends Reducer<Key, Value, Key, Value> {
 		public void reduce(Key key, Iterable<Value> values, Context context)
 				throws IOException, InterruptedException {
-
+			//TODO use actual accumulo input and output formats.
 			try {
 
 				BatchWriter w = AccumuloUtils.connectBatchWrite(checkedImages);
@@ -158,6 +161,8 @@ public class ImageLoader extends Configured implements Tool {
 				} else {
 					log.error(e.getStackTrace());
 				}
+			} catch (PageCrawlException e) {
+				log.info("Error crawling page" , e);
 			}
 		}
 	}
@@ -165,14 +170,11 @@ public class ImageLoader extends Configured implements Tool {
 	public static void addImageHashes(String url, String UserAgent)
 			throws MalformedURLException, IOException, AccumuloException,
 			AccumuloSecurityException, TableNotFoundException,
-			TableExistsException {
+			TableExistsException, PageCrawlException {
 
 		// Use web page parser to find images
 		System.out.println("Checking URL: " + url + " for images");
-		WebPageParser iExtract = new WebPageParser(url, UserAgent);
-
-		// Make sure divs are removed to remvoe irrelevant images
-		iExtract.parseWithoutDivs(divsFile);
+		WebPageCrawl iExtract = new WebPageCrawl(url, UserAgent, Collections.<String>emptySet());
 
 		// Connect to the hash table
 		BatchWriter hashTableWriter = AccumuloUtils

@@ -17,7 +17,8 @@
 package com.bah.applefox.main.plugins.webcrawler;
 
 import java.io.IOException;
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.Set;
 
 import org.apache.accumulo.core.client.BatchWriter;
 import org.apache.accumulo.core.client.Scanner;
@@ -30,14 +31,17 @@ import org.apache.accumulo.core.data.Mutation;
 import org.apache.accumulo.core.data.Range;
 import org.apache.accumulo.core.data.Value;
 import org.apache.accumulo.core.security.Authorizations;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.output.NullOutputFormat;
 
 import com.bah.applefox.main.Ingester;
 import com.bah.applefox.main.plugins.utilities.AccumuloUtils;
-import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageParser;
+import com.bah.applefox.main.plugins.webcrawler.utilities.PageCrawlException;
+import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageCrawl;
 
 /**
  * A MapReduce job that crawls the domains inidicated by the seed URLs and loads
@@ -46,6 +50,8 @@ import com.bah.applefox.main.plugins.webcrawler.utilities.WebPageParser;
  */
 public class WebCrawler extends Ingester {
 	private static String table, table2, table3, userAgent;
+	private static final Log LOG = LogFactory.getFactory().getLog(
+			WebCrawler.class);
 
 	/**
 	 * MapperClass extends the Mapper class. It performs the map functionality
@@ -80,10 +86,15 @@ public class WebCrawler extends Ingester {
 				BatchWriter w3;
 				Value v = new Value();
 
-				WebPageParser p = new WebPageParser(currentURL.toString(),
-						userAgent);
+				WebPageCrawl p;
+				try {
+					p = new WebPageCrawl(currentURL.toString(), userAgent, Collections.<String>emptySet());
+				} catch (PageCrawlException e1) {
+					LOG.info("Unable to crawl " + currentURL);
+					return;
+				}
 
-				HashSet<String> links = p.getChildLinks();
+				Set<String> links = p.getChildLinks();
 				String title = p.getTitle();
 
 				v.set(title.getBytes());
@@ -99,7 +110,8 @@ public class WebCrawler extends Ingester {
 
 				try {
 					// String linkString = "1.0 ";
-
+					// TODO: create an output format that is able to write to
+					// multiple accumulo tables
 					Scanner scan = AccumuloUtils.connectRead(table);
 					w = AccumuloUtils.connectBatchWrite(table);
 					w2 = AccumuloUtils.connectBatchWrite(table2);
@@ -154,17 +166,6 @@ public class WebCrawler extends Ingester {
 		}
 	}
 
-	/**
-	 * ReducerClass extends Reducer and would perform the Reduce functionality
-	 * of MapReduce, but in this case it is only a place holder.
-	 * 
-	 */
-	public static class ReducerClass extends Reducer<Key, Value, Key, Value> {
-		public void reduce() {
-
-		}
-	}
-
 	public static enum MATCH_COUNTER {
 		URLS_PARSED
 	};
@@ -193,7 +194,7 @@ public class WebCrawler extends Ingester {
 		String clone = args[5];
 		String clone2 = args[12];
 		table = clone;
-		
+
 		AccumuloUtils.setSplitSize(args[24]);
 		table2 = clone2 + "From";
 		table3 = clone2 + "To";
@@ -208,8 +209,8 @@ public class WebCrawler extends Ingester {
 		job.setMapOutputKeyClass(Key.class);
 		job.setMapOutputValueClass(Value.class);
 
-		job.setReducerClass(ReducerClass.class);
-		job.setOutputFormatClass(AccumuloOutputFormat.class);
+		job.setNumReduceTasks(0);
+		job.setOutputFormatClass(NullOutputFormat.class);
 		job.setOutputKeyClass(Key.class);
 		job.setOutputValueClass(Value.class);
 		AccumuloOutputFormat.setZooKeeperInstance(job.getConfiguration(),
