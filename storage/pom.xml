@@ -71,9 +71,5 @@
       <groupId>com.bah.bahdit</groupId>
       <artifactId>search</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.apache.pig</groupId>
-      <artifactId>pig</artifactId>
-    </dependency>
   </dependencies>
 </project>
