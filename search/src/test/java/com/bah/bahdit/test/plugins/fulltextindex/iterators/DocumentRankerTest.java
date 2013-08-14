@@ -129,7 +129,7 @@ public class DocumentRankerTest {
     ai.next();
 
     assertTrue(ai.hasTop());
-    assertEquals(nk("apple", "www.bing.com", "8"), ai.getTopKey());
+    assertEquals(nk("apple", "www.bing.com", "[NUM_RESULTS] : 8"), ai.getTopKey());
     
     assertEquals((Double)0.95, Utils.deserialize(ai.getTopValue().get()));
 	}
