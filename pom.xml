@@ -29,7 +29,7 @@
   <properties>
     <opennlp.version>1.5.2-incubating</opennlp.version>
     <hadoop.version>1.0.3</hadoop.version>
-    <tika.version>1.1</tika.version>
+    <tika.version>1.23</tika.version>
     <powermock.version>1.4.12</powermock.version>
   </properties>
   <dependencyManagement>
